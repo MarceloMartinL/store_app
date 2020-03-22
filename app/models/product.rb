@@ -9,5 +9,5 @@ class Product < ApplicationRecord
 	validates :name, presence: true
 	validates :sku, presence: true
 	validates :type, presence: true, inclusion: { in: PRODUCT_TYPES }
-	validates :price, presence: true
+	validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
 end

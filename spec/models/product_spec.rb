@@ -12,5 +12,9 @@ RSpec.describe Product, type: :model do
     it 'validates inclusion of fields' do
     	should validate_inclusion_of(:type).in_array(['pizza', 'complement'])
     end
+
+    it 'validates numericality of fields' do
+      should validate_numericality_of(:price).is_greater_than_or_equal_to(0)
+    end
   end
 end
