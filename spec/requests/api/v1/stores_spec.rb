@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Voucher', type: :request do
+RSpec.describe 'Store', type: :request do
 	let!(:stores) { create_list(:store, 3) }
 	let(:store_id) { stores.first.id }
 
