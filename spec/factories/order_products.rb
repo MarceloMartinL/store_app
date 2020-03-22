@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :product_store do
+  factory :order_product do
     product
-    store
+    order
   end
 end

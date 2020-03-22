@@ -16,5 +16,10 @@ RSpec.describe Product, type: :model do
     it 'validates numericality of fields' do
       should validate_numericality_of(:price).is_greater_than_or_equal_to(0)
     end
+
+    it 'validates relations' do
+      should have_many(:product_stores).dependent(:destroy)
+      should have_many(:stores).through(:product_stores)
+    end
   end
 end
