@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :stores, except: [:new] do
         resources :products, shallow: true
         resources :product_stores, only: [:index, :create, :destroy]
+        resources :orders, shallow: true
       end
     end
   end

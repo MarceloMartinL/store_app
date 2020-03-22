@@ -11,5 +11,11 @@ RSpec.describe Store, type: :model do
     it 'validates uniqueness of fields' do
     	should validate_uniqueness_of(:name)
     end
+
+    it 'validates relations' do
+      should have_many(:product_stores).dependent(:destroy)
+      should have_many(:products).through(:product_stores)
+      should have_many(:orders)
+    end
   end
 end
