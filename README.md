@@ -32,3 +32,6 @@ $ docker-compose up --build
 ```
 $ docker-compose run web rspec
 ```
+## API Documentation
+
+https://app.swaggerhub.com/apis-docs/marcelom/store_app/1.0.0
