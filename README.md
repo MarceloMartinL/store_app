@@ -1,24 +1,34 @@
-# README
+# Store_app PJ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Store API that manages stores, products and orders.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+- Ruby 2.6.5
+- Rails 5.2.4
+- Docker
+- Docker-compose
 
-* System dependencies
+## How To Use
 
-* Configuration
+Create a .env file in the root folder and set the ENV variables:
+```
+# Database config
 
-* Database creation
+POSTGRES_USER=<YOUR DB USER>
+POSTGRES_PASSWORD=<YOUR DB PASS>
 
-* Database initialization
+```
+The run the following commands to start the app:
+```
+$ docker-compose run web bundle install
+$ docker-compose run web rails db:create
+$ docker-compose run web rails db:migrate
+$ docker-compose up --build
+```
 
-* How to run the test suite
+## Run tests
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ docker-compose run web rspec
+```
