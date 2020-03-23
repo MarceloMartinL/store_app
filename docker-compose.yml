@@ -5,6 +5,8 @@ services:
     image: postgres
     volumes:
       - /var/lib/postgresql/data
+    ports:
+      - 5432:5432
     env_file:
       - '.env'
   web:
@@ -13,7 +15,7 @@ services:
     volumes:
       - .:/myapp
     ports:
-      - "3000:3000"
+      - 3000:3000
     depends_on:
       - db
     env_file:
